@@ -44,28 +44,31 @@ public class AllPreferences {
 	@Override
 	public boolean equals(Object other) {
 		if (other instanceof AllPreferences) {
-			AllPreferences that = (AllPreferences)other;
-			if (this.allPersons().size() != that.allPersons().size()) {
-				return false;
-			}
-			for (String person: allPersons()) {
-				if (!that.allPersons().contains(person)) {
-					return false;
-				}
-				Set<String> prefs = prefsFor(person);
-				if (prefs.size() != that.prefsFor(person).size()) {
-					return false;
-				}
-				for (String pref: prefs) {
-					if (!that.hasPreference(person, pref)) {
-						return false;
-					}
-				}
-			}
-			return true;
+			return eq((AllPreferences)other);
 		} else {
 			return false;
 		}
+	}
+	
+	private boolean eq(AllPreferences that) {
+		if (this.allPersons().size() != that.allPersons().size()) {
+			return false;
+		}
+		for (String person: allPersons()) {
+			if (!that.allPersons().contains(person)) {
+				return false;
+			}
+			Set<String> prefs = prefsFor(person);
+			if (prefs.size() != that.prefsFor(person).size()) {
+				return false;
+			}
+			for (String pref: prefs) {
+				if (!that.hasPreference(person, pref)) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 	
 	public boolean hasPerson(String person) {

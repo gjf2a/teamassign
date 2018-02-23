@@ -33,6 +33,7 @@
                </children>
             </HBox>
             <ListView fx:id="personPreferences" />
+            <CheckBox mnemonicParsing="false" text="Student assigned to own team" />
          </children>
       </VBox>
    </left>

@@ -34,9 +34,10 @@ public class Candidate {
 	}
 	
 	public ArrayList<Candidate> successors() {
-		ArrayList<Candidate> result = new ArrayList<>();
 		TreeSet<String> unassigned = new TreeSet<>(prefs.allPersons());
 		unassigned.removeAll(tentative.allAssignedPersons());
+		
+		ArrayList<Candidate> result = new ArrayList<>();
 		for (String person: unassigned) {
 			for (String leader: prefs.prefsFor(person)) {
 				result.add(with(person, leader));
