@@ -8,11 +8,13 @@ public class AllPreferencesTest {
 
 	@Test
 	public void test() {
+		// Use Case 2
 		AllPreferences prefs = new AllPreferences();
 		for (String name: new String[]{"Moe", "Larry", "Curly"}) {
 			prefs.addPerson(name);
 		}
 		
+		// Use Case 4
 		prefs.addPreference("Curly", "Moe");
 		prefs.addPreference("Larry", "Curly");
 		prefs.addPreference("Moe", "Larry");
