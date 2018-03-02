@@ -1,0 +1,53 @@
+Requirements
+
+Team Assignment Program
+
+Purpose and Scope
+- The purpose of this program is to take a list of preferences of students and create team assignments that respect those preferences.
+
+Stakeholders
+- Instructor: Needs to create balanced teams
+- Students: Each student needs to be on exactly one team
+
+Use Cases
+1. Trigger: User starts program
+1.1. Program opens
+1.2. Program sets min/max team size values to 1
+
+2. Trigger: User types in a student name
+2.1. Program adds student to student list & displays new version
+Extensions:
+- Repeated student entries are ignored
+
+3. Trigger: User adjusts min/max team size
+3.1. Program displays updated size
+Extensions:
+- If a min/max setting results in min > max, it is ignored
+
+4. Trigger: User selects a student
+4.1. User selects a different student as well
+4.2. Program adds the other student to the first student’s preference list & displays it
+
+5. Trigger: User selects a student
+5.1. User removes the student from the program
+5.2. Program removes all references to the student and updates all displays
+
+6. Trigger: User selects a preference from a preference list
+6.1. User removes preference
+6.2. Program removes preference from preference list & updates display
+
+7. Trigger: User requests an assignment
+7.1. Program displays an assignment of students to other students’ projects
+
+8. Trigger: User selects a part of an assignment
+8.1. User reassigns a student
+8.2. Program displays a flag indicating whether the overall assignment is still valid
+
+9. Trigger: User requests assignment statistics
+9.1. User selects a team for which statistics are wanted
+9.2. Program displays number of requests to be on that team
+
+10. Trigger: User specifies that student must be on own team
+10.1. Program records the student as requesting self as a preference
+10.2. When an assignment is requested (step 7), if the student’s team is one of the 
+      created teams, the student must be on the team.

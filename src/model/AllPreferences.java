@@ -28,6 +28,9 @@ public class AllPreferences {
 		return result.toString();
 	}
 	
+	@Override
+	public int hashCode() {return toString().hashCode();}
+	
 	public static AllPreferences from(String s) {
 		AllPreferences result = new AllPreferences();
 		for (String part: Util.debrace(s)) {

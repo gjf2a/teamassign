@@ -14,6 +14,21 @@ public class AssignmentRow {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return person + ":" + team;
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		return toString().equals(other.toString());
+	}
+	
+	@Override
+	public int hashCode() {
+		return toString().hashCode();
+	}
+	
 	public AssignmentRow(String p, String t) {
 		person = p;
 		team = t;
