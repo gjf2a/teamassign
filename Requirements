@@ -38,6 +38,8 @@ Extensions:
 
 7. Trigger: User requests an assignment
 7.1. Program displays an assignment of students to other students’ projects
+Extension: 
+- If the user wishes to stop the search, the user can halt the search at will.
 
 8. Trigger: User selects a part of an assignment
 8.1. User reassigns a student
@@ -47,7 +49,6 @@ Extensions:
 9.1. User selects a team for which statistics are wanted
 9.2. Program displays number of requests to be on that team
 
-10. Trigger: User specifies that student must be on own team
-10.1. Program records the student as requesting self as a preference
-10.2. When an assignment is requested (step 7), if the student’s team is one of the 
+10. Trigger: If the maximum team size > 1, a student must be on own team
+10.1. When an assignment is requested (step 7), if the student’s team is one of the 
       created teams, the student must be on the team.

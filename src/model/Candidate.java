@@ -47,7 +47,7 @@ public class Candidate {
 	}
 	
 	public boolean atGoal() {
-		return allPersonsAssigned() && allTeamSizesOk();
+		return allPersonsAssigned() && allTeamSizesOk() && (max == 1 || allTeamsContainLeaders());
 	}
 	
 	public boolean allPersonsAssigned() {
@@ -62,7 +62,12 @@ public class Candidate {
 		return allTeamSizes().allMatch(size -> size >= min && size <= max);
 	}
 	
+	public boolean allTeamsContainLeaders() {
+		return tentative.allLeaders().stream().allMatch(leader -> tentative.getLeaderFor(leader).equals(leader));
+	}
+	
 	public boolean canPurge() {
-		return allTeamSizes().anyMatch(size -> size > max);
+		return allTeamSizes().anyMatch(size -> size > max)
+				|| (max > 1 && allPersonsAssigned() && !allTeamsContainLeaders());
 	}
 }
